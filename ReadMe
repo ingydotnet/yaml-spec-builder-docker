@@ -1,0 +1,11 @@
+YAML Spec Builder
+=================
+
+A docker image to build the YAML spec from source.
+
+= Usage
+
+    git clone git@github.com/yaml/yaml-spec
+    cd yaml-spec
+    docker run -v $PWD:/yaml-spec ingy/yaml-spec-builder
+    firefox spec/index.html

@@ -1,0 +1,11 @@
+#!/bin/bash
+
+set -e
+
+(
+  set -x
+  cd /yaml-spec
+  make html
+)
+
+echo "YAML Spec Successfuly Built"
