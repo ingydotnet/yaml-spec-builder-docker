@@ -12,8 +12,7 @@ source repo:
 ```
 git clone git@github.com/yaml/yaml-spec
 cd yaml-spec
-docker run -v $PWD:/yaml-spec ingy/yaml-spec-builder
-firefox spec.html
+docker run -v $PWD:/yaml-spec yamlio/yaml-spec-builder
 ```
 
 or just run this:
