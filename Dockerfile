@@ -6,10 +6,12 @@ RUN apt-get update && apt-get install -y \
     docbook-xml \
     docbook-xsl \
     libexpat1-dev \
-    xsltproc
+    xsltproc \
+    \
+    git gist vim
 
 RUN cpanm -n XML::Parser YAML
 
-COPY yaml-spec-builder /
+WORKDIR /yaml-spec
 
-ENTRYPOINT /yaml-spec-builder
+ENTRYPOINT ["make", "spec"]

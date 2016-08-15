@@ -13,12 +13,14 @@ source repo:
 git clone git@github.com/yaml/yaml-spec
 cd yaml-spec
 docker run -v $PWD:/yaml-spec yamlio/yaml-spec-builder
+cd ..
+cp yaml-spec/spec ./spec
 ```
 
 or just run this:
 
 ```
-make run
+make spec
 ```
 
 which will do the same thing.
