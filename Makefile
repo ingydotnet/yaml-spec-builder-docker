@@ -1,6 +1,6 @@
 DOCKER_IMAGE_NAME := yamlio/yaml-spec-builder
 YAML_SPEC := yaml-spec
-YAML_SPEC_REPO := https://github.com/yaml/$(YAML_SPEC)
+YAML_SPEC_REPO := git@github.com:yaml/$(YAML_SPEC)
 
 .PHONY: spec
 spec: $(YAML_SPEC)
