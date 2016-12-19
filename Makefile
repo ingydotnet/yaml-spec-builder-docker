@@ -1,19 +1,22 @@
 DOCKER_IMAGE_NAME := yamlio/yaml-spec-builder
-YAML_SPEC_REPO := https://github.com/yaml/yaml-spec
+YAML_SPEC := yaml-spec
+YAML_SPEC_REPO := https://github.com/yaml/$(YAML_SPEC)
 
-spec: yaml-spec
+.PHONY: spec
+spec: $(YAML_SPEC)
+	rm -fr ./spec/
 	( \
 	    set -x; \
 	    cd $<; \
-	    docker run -v $$PWD:/yaml-spec $(DOCKER_IMAGE_NAME) \
+	    docker run -v $$PWD:/$< $(DOCKER_IMAGE_NAME) \
 	)
 	mv $</spec ./spec
 
-yaml-spec:
+$(YAML_SPEC):
 	git clone $(YAML_SPEC_REPO) $@
 
 clean:
-	rm -fr spec yaml-spec
+	rm -fr spec $(YAML_SPEC)
 
 # Docker targets:
 build:
